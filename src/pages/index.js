@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -16,7 +17,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { hospitalDatas } from "../hospital-data";
 
-const ResponsiveTypography = (props) => {
+export const ResponsiveTypography = (props) => {
   return <Typography variant={props.variant}>{props.children}</Typography>;
 };
 const useStyles = makeStyles({
@@ -117,6 +118,9 @@ const Top = () => {
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
           ・市予約タイプの医療機関は市の『WEB予約抽選申込ページ』で予約
+        </ResponsiveTypography>
+        <ResponsiveTypography variant="body2">
+          ・<Link to="/about">サイト制作者について</Link>
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
           <p>
