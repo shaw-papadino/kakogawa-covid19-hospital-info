@@ -117,7 +117,13 @@ const Top = () => {
           ・病院予約タイプの医療機関はかかりつけ患者のみ予約
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
-          ・市予約タイプの医療機関は市の『WEB予約抽選申込ページ』で予約
+          ・市予約タイプの医療機関は以下の方法で予約
+        </ResponsiveTypography>
+        <ResponsiveTypography variant="body2">
+          　・<a href="">WEB予約抽選申込ページ</a>から予約
+        </ResponsiveTypography>
+        <ResponsiveTypography variant="body2">
+          　・市コールセンター(0570-022-160)へ連絡
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
           ・<Link to="/about">サイト制作者について</Link>
