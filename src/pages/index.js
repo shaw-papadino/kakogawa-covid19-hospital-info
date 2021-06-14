@@ -120,7 +120,11 @@ const Top = () => {
           ・市予約タイプの医療機関は以下の方法で予約
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
-          　・<a href="">WEB予約抽選申込ページ</a>から予約
+          　・
+          <a href="https://form.kintoneapp.com/public/form/show/80d93ad98127e9285c0a9d0d6dcbfbfc8aabf0f7c77e64e66f3487b14e40ce68">
+            WEB予約抽選申込ページ
+          </a>
+          から予約
         </ResponsiveTypography>
         <ResponsiveTypography variant="body2">
           　・市コールセンター(0570-022-160)へ連絡
