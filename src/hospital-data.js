@@ -6,7 +6,6 @@ const callCenter = "コールセンター";
 
 const selfReserve = "病院予約";
 const cityReserve = "市予約";
-const selfAndCityReserve = "病院or市予約";
 
 const selfReserveHospitals = [
   {

@@ -14,7 +14,8 @@ import {
   ThemeProvider,
 } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
+import MaterialTable from "@material-table/core";
+import { tableIcons } from "../tableicons";
 import { hospitalDatas } from "../hospital-data";
 
 export const ResponsiveTypography = (props) => {
@@ -59,12 +60,42 @@ const headers = [
   "TEL",
 ];
 
-const tel = "電話";
-const contact = "窓口";
-const internet = "ネット";
-const selfReserve = "病院にて予約";
-const cityReserve = "市にて予約";
+const columns = [
+  { title: "医療機関名", field: "hospitalName" },
+  {
+    title: "住所",
+    field: "address",
+    render: (row) => <a href={row.address.url}>{row.address.name}</a>,
+    customFilterAndSearch: (term, row) => row.address.name.indexOf(term) > -1,
+  },
+  { title: "予約タイプ(病院 or 市)", field: "reserveType" },
+  { title: "予約方法", field: "reserveWay" },
+  {
+    title: "予約開始日",
+    field: "reserveStart",
+    filtering: false,
+  },
+  { title: "接種開始日", field: "vaccineStart", filtering: false },
+  {
+    title: "HP",
+    field: "homePageUrl",
+    render: (row) => <a href={row.homePageUrl}>HP</a>,
+    filtering: false,
+  },
+  { title: "TEL", field: "tel", filtering: false },
+];
 
+const FilterableTable = ({ title, columns, data, ...props }) => {
+  return (
+    <MaterialTable
+      icons={tableIcons}
+      title={title}
+      columns={columns}
+      data={data}
+      {...props}
+    />
+  );
+};
 const BasicTable = () => {
   const classes = useStyles();
 
@@ -141,7 +172,13 @@ const Top = () => {
           </p>
         </ResponsiveTypography>
       </ThemeProvider>
-      <BasicTable />
+      {/* <BasicTable /> */}
+      <FilterableTable
+        title={""}
+        columns={columns}
+        data={hospitalDatas}
+        options={{ filtering: true, pageSize: 10 }}
+      />
     </>
   );
 };
