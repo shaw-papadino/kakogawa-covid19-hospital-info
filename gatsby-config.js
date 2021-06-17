@@ -18,7 +18,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: "/",
+      },
+    },
   ],
   pathPrefix: "/kakogawa-covid19-hospital-info",
 };

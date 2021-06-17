@@ -32,6 +32,7 @@ export const Head = () => {
       {url && <meta property="og:url" content={url} />}
       {title && <meta property="og:title" content={title} />}
       {description && <meta property="og:description" content={description} />}
+      <meta name="twitter:card" content="summary" />
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
       )}
