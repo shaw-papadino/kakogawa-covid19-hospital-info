@@ -25,6 +25,10 @@ export const Head = () => {
   return (
     <Helmet htmlAttributes={{ lang: lang }} title={title}>
       <meta name="description" content={description} />
+      <meta
+        name="google-site-verification"
+        content="kmZW5GYU4y2ixeQIYR9jy10nN0buT9cGptqxwCjlGrk"
+      />
       {url && <meta property="og:url" content={url} />}
       {title && <meta property="og:title" content={title} />}
       {description && <meta property="og:description" content={description} />}
