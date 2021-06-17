@@ -1,13 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
 import {
   createMuiTheme,
   responsiveFontSizes,
@@ -17,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import MaterialTable from "@material-table/core";
 import { tableIcons } from "../tableicons";
 import { hospitalDatas } from "../hospital-data";
+import { Layout } from "../components/layout";
 
 export const ResponsiveTypography = (props) => {
   return <Typography variant={props.variant}>{props.children}</Typography>;
@@ -96,49 +90,12 @@ const FilterableTable = ({ title, columns, data, ...props }) => {
     />
   );
 };
-const BasicTable = () => {
-  const classes = useStyles();
-
-  return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            {headers.map((header) => (
-              <TableCell>{header}</TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {hospitalDatas.map((row) => (
-            <TableRow key={row.hospitalName}>
-              <TableCell component="th" scope="row">
-                {row.hospitalName}
-              </TableCell>
-              <TableCell>
-                <a href={row.address.url}>{row.address.name}</a>
-              </TableCell>
-              <TableCell>{row.reserveType}</TableCell>
-              <TableCell>{row.reserveStart}</TableCell>
-              <TableCell>{row.vaccineStart}</TableCell>
-              <TableCell>{row.reserveWay}</TableCell>
-              <TableCell>
-                <a href={row.homePageUrl}>HP</a>
-              </TableCell>
-              <TableCell>{row.tel}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-};
 
 const Top = () => {
   let theme = createMuiTheme();
   theme = responsiveFontSizes(theme);
   return (
-    <>
+    <Layout>
       <ThemeProvider theme={theme}>
         <ResponsiveTypography variant="h4">
           加古川市内のコロナワクチン個別接種実施医療機関まとめ
@@ -179,7 +136,7 @@ const Top = () => {
         data={hospitalDatas}
         options={{ filtering: true, pageSize: 10 }}
       />
-    </>
+    </Layout>
   );
 };
 

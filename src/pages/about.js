@@ -7,11 +7,13 @@ import {
 } from "@material-ui/core/styles";
 import { ResponsiveTypography } from "./index.js";
 import { FaTwitter } from "react-icons/fa";
+import { Layout } from "../components/layout";
+
 const About = () => {
   let theme = createMuiTheme();
   theme = responsiveFontSizes(theme);
   return (
-    <div>
+    <Layout>
       <Link to="/">ワクチン接種医療機関ページに戻る</Link>
       <ThemeProvider theme={theme}>
         <ResponsiveTypography variant="h6">自己紹介</ResponsiveTypography>
@@ -39,7 +41,7 @@ const About = () => {
           </a>
         </ResponsiveTypography>
       </ThemeProvider>
-    </div>
+    </Layout>
   );
 };
 
