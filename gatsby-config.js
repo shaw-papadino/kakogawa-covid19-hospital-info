@@ -3,7 +3,7 @@ module.exports = {
     title: "kakogawa-covid19-hospital",
     siteUrl: "https://shaw-papadino.github.io/kakogawa-covid19-hospital-info",
     description:
-      "加古川市のコロナワクチン個別接種を実施している医療機関の情報をまとめたサイトです.",
+      "加古川市でコロナワクチン個別接種を実施している医療機関の情報をまとめたサイトです.",
     lang: "ja",
     twitterUsername: "papa_ok_san",
   },
