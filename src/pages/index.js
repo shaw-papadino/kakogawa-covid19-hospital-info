@@ -134,7 +134,13 @@ const Top = () => {
         title={""}
         columns={columns}
         data={hospitalDatas}
-        options={{ filtering: true, pageSize: 10 }}
+        options={{
+          filtering: true,
+          pageSize: 10,
+          headerStyle: {
+            whiteSpace: "nowrap",
+          },
+        }}
       />
     </Layout>
   );
